@@ -2,7 +2,7 @@ import mysql.connector as sqltor
 import random
 #_checklist_functions_
 def Exists(acc):
-    con=sqltor.connect(host='localhost', user='root', password='mysql@zaid', database='bank')
+    con=sqltor.connect(host='localhost', user='root', passwd='mysql@zaid', database='bank')
     if con.is_connected()==False:
         print('Error, connection not established')
     else:
@@ -16,7 +16,7 @@ def Exists(acc):
             return False
     con.close()
 def Pin_No(pin,acc):
-    con=sqltor.connect(host='localhost', user=' root ', password='mysql@zaid',database='bank')
+    con=sqltor.connect(host='localhost', user=' root ', passwd='mysql@zaid',database='bank')
     if con.is_connected()==False:
         print('Error, connection not established')
     else:
@@ -30,7 +30,7 @@ def Pin_No(pin,acc):
             return False
     con.close()
 def exists_phoneno(no):
-    con=sqltor.connect(host='localhost', user=' root ', password='mysql@zaid',database='bank')
+    con=sqltor.connect(host='localhost', user=' root ', passwd='mysql@zaid',database='bank')
     if con.is_connected()==False:
         print('Error, connection not established')
     else:
@@ -44,7 +44,7 @@ def exists_phoneno(no):
             return False
     con.close()
 def Amm(acc,amount):
-    con=sqltor.connect(host='localhost', user=' root ', password='mysql@zaid',database='bank')
+    con=sqltor.connect(host='localhost', user=' root ', passwd='mysql@zaid',database='bank')
     if con.is_connected()==False:
         print('Error, connection not established')
     else:
@@ -64,7 +64,7 @@ def Transfer(acc,acc2, amount):
             pin=int(input('Enter your 4 digit pin number:'))
             if Pin_No(pin,acc):
                 if Amm(acc,amount):
-                    con=sqltor.connect(host='localhost', user=' root ', password='mysql@zaid',database='bank')
+                    con=sqltor.connect(host='localhost', user=' root ', passwd='mysql@zaid',database='bank')
                     if con.is_connected()==False:
                         print('Error, connection not established')
                     else:
@@ -93,7 +93,7 @@ def Deposit(acc,amount):
     if Exists(acc):
         pin=int(input('Enter your 4 digit pin number:'))
         if Pin_No(pin,acc):
-            con=sqltor.connect(host='localhost', user=' root ', password='mysql@zaid',database='bank')
+            con=sqltor.connect(host='localhost', user=' root ', passwd='mysql@zaid',database='bank')
             if con.is_connected()==False:
                 print('Error, connection not established')
             else:
@@ -126,7 +126,7 @@ def Create_Acc():
                     print('To Create an account, a minimum deposit of 300 rupees is needed')
                     bal=float(input('Enter the amount of money u want to deposit:'))
                     if bal>=300:
-                        con=sqltor.connect(host='localhost', user=' root ', password='mysql@zaid',database='bank')
+                        con=sqltor.connect(host='localhost', user=' root ', passwd='mysql@zaid',database='bank')
                         if con.is_connected()==False:
                             print('Error, connection not established')
                         else:
@@ -174,7 +174,7 @@ def Witham(acc,amount):
         pin=int(input('Enter your 4 digit pin number:'))
         if Pin_No(pin,acc):
             if Amm(acc,amount):
-                con=sqltor.connect(host='localhost',user=' root',password='mysql@zaid',database='bank')
+                con=sqltor.connect(host='localhost',user=' root',passwd='mysql@zaid',database='bank')
                 if con.is_connected()==False:
                     print('Error, connection not established')
                 else:
@@ -198,7 +198,7 @@ def Balance_Enquiry(acc):
     if Exists(acc):
         pin=int(input('Enter your 4 digit pin number:'))
         if Pin_No(pin,acc):
-            con=sqltor.connect(host='localhost',user=' root',password='mysql@zaid',database='bank')
+            con=sqltor.connect(host='localhost',user=' root',passwd='mysql@zaid',database='bank')
             if con.is_connected()==False:
                 print('Error, connection not established')
             else:
@@ -216,7 +216,7 @@ def Close_Acc(acc):
     if Exists(acc):
         pin=int(input('Enter your 4 digit pin number:'))
         if Pin_No(pin,acc):
-            con=sqltor.connect(host='localhost',user=' root',password='mysql@zaid',database='bank')
+            con=sqltor.connect(host='localhost',user=' root',passwd='mysql@zaid',database='bank')
             if con.is_connected()==False:
                 print('Error, connection not established')
             else:
